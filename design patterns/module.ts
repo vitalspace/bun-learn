@@ -17,7 +17,10 @@ const myModule = (() => {
     private: "Hello world this is a private message",
   };
 
-  const sayPrivate = () => console.log(privMessage.private);
+  const sayPrivate = () => {
+    // console.log(privMessage.private);
+    return privMessage.private;
+  };
 
   return {
     sayPublic: () => sayPrivate(),
@@ -28,4 +31,7 @@ const myModule = (() => {
  * Calls the `sayPublic` function on the `myModule` object, which in turn calls the `sayPrivate` function
  * and logs the value of the `private` property of `privMessage` to the console.
  */
-myModule.sayPublic();
+
+// myModule.sayPublic();
+
+export { myModule };
